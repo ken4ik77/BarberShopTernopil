@@ -1,17 +1,51 @@
 export interface UsersBody {
+    _id: string;
+    email: string;
     firstName: string;
     lastName: string;
     phone: string;
     role: string;
-    userId: string;
+    createdAt: string;
+    updatedAt: string;
 
 };
 export interface UsersResponse {
+    page: number;
+    perPage: number;
+    totalPages: number;
+    totalItems: string;
+    hasNextPage: boolean;
+    hasPreviousPage: boolean;
+    users: UsersBody[];
+};
+
+export interface UsersParam {
     page: number;
     perPage: number;
     sortField: string;
     sortOrder: string;
     search: string;
     role: string;
-    users: UsersBody[];
 };
+export interface UserErrorResponse {
+status: number;
+    message: string;
+    data: string;
+}
+
+export interface UserRefreshBody {
+    firstName: string;
+    lastName: string;
+    phone: string;
+    role: "user";
+}
+export interface UserRefreshResponse {
+    _id: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    phone: string;
+    role: string;
+    createdAt: string;
+    updatedAt: string;
+}
