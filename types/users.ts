@@ -86,15 +86,21 @@ export interface UserUpDateResponse {
     role: string;
     createdAt: string;
     updatedAt: string;
-}
+};
 export interface UserUpDateErrorResponse {
     status: number;
     message: string;
     data: string;
-}
+};
 export interface UserDeleteParams {
     userId:string
-}
+};
 export interface UserDeleteResponse {
     message: string;
-}
+};
+export interface UserDeleteErrorResponse {
+    status: number;
+    message: string;
+    data: string;
+
+};
