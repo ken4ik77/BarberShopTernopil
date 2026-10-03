@@ -151,14 +151,14 @@ export interface EmployeeAssignServiceErrorResponse {
     message: string;
     data: string;
 };
-export interface EmloyeeDeleteServiceParams {
+export interface EmployeeDeleteServiceParams {
     employeeId: string;
     serviceId: string;
 };
-export interface EmloyeeDeleteServiceResponse {
+export interface EmployeeDeleteServiceResponse {
     message: string;
 };
-export interface EmloyeeDeleteServiceErrorResponse {
+export interface EmployeeDeleteServiceErrorResponse {
 status: number;
     message: string;
     data: string;
