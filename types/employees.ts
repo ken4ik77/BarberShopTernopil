@@ -1,3 +1,5 @@
+import { ServiceBody } from "./services";
+
 export interface EmployeeBody {
     _id: string;
     firstName: string;
@@ -11,13 +13,13 @@ export interface EmployeeBody {
     updatedAt: string;
 };
 export interface EmployeeParams {
-    page: number;
-        perPage: number;
-        sortField: string;
-        sortOrder: string;
-    search: string;
-    isActive: boolean;
-    serviceId: string;
+    page?: number;
+        perPage?: number;
+        sortField?: string;
+        sortOrder?: string;
+    search?: string;
+    isActive?: boolean;
+    serviceId?: string;
 };
 export interface EmployeeResponse {
     page: number;
@@ -42,41 +44,13 @@ export interface EmployeeCreateBody {
     imageUrl?: string;
     isActive?: boolean;
 };
-export interface EmployeeCreateResponse {
-     _id: string;
-    firstName: string;
-    lastNam: string;
-    description: string;
-    phone: string;
-    email: string;
-    imageUrl: string;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
-};
+
 export interface EmployeeCreateErrorResponse {
  status: number;
     message: string;
     data: string;
 };
-export interface EmployeeByIdParams {
-    employeeId: string;
-};
-export interface EmployeeByIdResponse {
-     _id: string;
-    firstName: string;
-    lastNam: string;
-    description: string;
-    phone: string;
-    email: string;
-    imageUrl: string;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
-};
-export interface EmployeeUpdateByIdParams {
-    employeeId: string;
-};
+
 export interface EmployeeUpdateByIdBody {
     firstName: string;
     lastNam: string;
@@ -86,37 +60,19 @@ export interface EmployeeUpdateByIdBody {
     imageUrl?: string;
     isActive?: boolean;
 };
-export interface EmployeeUpdateByIdResponse {
-    _id: string;
-    firstName: string;
-    lastNam: string;
-    description: string;
-    phone: string;
-    email: string;
-    imageUrl: string;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
-};
+
 export interface EmployeeUpdateErrorByIdResponse {
     status: number;
     message: string;
     data: string;
 };
-export interface EmployeeDeleteParams {
-    employeeId: string;
-};
-export interface EmployeeDeleteResponse {
-    message: string;
-};
+
 export interface EmployeeDeleteErrorResponse {
      status: number;
     message: string;
     data: string;
 };
-export interface EmployeeServicesParams{
-    employeeId: string;
-};
+
 export interface EmployeeServiceBody {
     _id: string;
     name: string;
@@ -128,7 +84,7 @@ export interface EmployeeServiceBody {
     updatedAt: string;
 };
 export interface EmployeeServicesResponse {
-    services: EmployeeServiceBody[];
+    services: ServiceBody;
 };
 export interface EmployeeServicesErrorResponse {
     status: number;
@@ -155,9 +111,7 @@ export interface EmployeeDeleteServiceParams {
     employeeId: string;
     serviceId: string;
 };
-export interface EmployeeDeleteServiceResponse {
-    message: string;
-};
+
 export interface EmployeeDeleteServiceErrorResponse {
 status: number;
     message: string;

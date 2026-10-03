@@ -40,16 +40,6 @@ export interface CreateServiceBody {
     price: number;
     isActive?: boolean;
 };
-export interface CreateServiceResponse {
-    _id: string;
-    name: string;
-    description: string;
-    durationMinutes: number;
-    price: number;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
-};
 export interface CreateServiceErrorResponse {
     status: number;
     message: string;
@@ -58,16 +48,7 @@ export interface CreateServiceErrorResponse {
 export interface ServiceByIdParams {
     serviceId: string;
 };
-export interface ServiceByIdResponse {
-    _id: string;
-    name: string;
-    description: string;
-    durationMinutes: number;
-    price: number;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
-};
+
 export interface ServiceByIdErrorResponse {
     status: number;
     message: string;
@@ -83,27 +64,11 @@ export interface UpdateServiceBody {
     price: number;
     isActive?: boolean;
 };
-export interface UpdateServiceResponse {
-    _id: string;
-    name: string;
-    description: string;
-    durationMinutes: number;
-    price: number;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
-};
+
 export interface UpdateServiceErrorResponse {
     status: number;
     message: string;
     data: string;
-};
-export interface DeleteServiceParam {
-    serviceId: string;
-
-};
-export interface DeleteServiceResponse {
-    message: string;
 };
 export interface DeleteServiceErrorResponse {
     status: number;

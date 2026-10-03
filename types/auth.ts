@@ -8,9 +8,7 @@ export interface RegisterBody {
     phone?: string;
 };
 export interface RegisterResponse {
-    status: number;
     message: string;
-    data: string;
 };
 
 export interface LoginBody {
@@ -18,24 +16,18 @@ export interface LoginBody {
     password: string;
 };
 export interface LoginResponse {
-    status: number;
-    message: string;
-    data: string;
+    accessToken: string;
 }
 
 export interface LogOutResponse {
-     status: number;
     message: string;
-    data: string;
 };
  
 export interface RefreshResponse {
-status: number;
-    message: string;
-    data: string;
+    accessToken: string;
 }
 export interface UserBody{
-_id: string,
+    _id: string,
     email: string,
     firstName: string,
     lastName: string,
@@ -46,5 +38,5 @@ _id: string,
 }
 
 export interface UserResponse {
-    user: UserBody[];
+    user: UserBody;
 }
