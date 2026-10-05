@@ -1,8 +1,8 @@
-import { UserRefreshBody, UsersBody, UsersResponse, UserUpDateBody } from "@/types/users";
+import { UserRefreshBody, UsersBody, UsersParams, UsersResponse, UserUpDateBody } from "@/types/users";
 import { proxyServer } from "./serverConfig";
 
-export const getUser = async () => { 
-    const res = await proxyServer.get<UsersResponse>('/users');
+export const getUser = async (params: UsersParams) => { 
+    const res = await proxyServer.get<UsersResponse>('/users', {params});
     return res.data;
 };
 export const refreshMyProfile = async (body: UserUpDateBody) => { 

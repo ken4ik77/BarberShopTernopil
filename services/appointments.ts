@@ -1,8 +1,8 @@
-import { AppointmentBody, AppointmentCreateBody, AppointmentsUpdateBody, AvailabilityResponse } from "@/types/appointments";
+import { AppointmentBody, AppointmentCreateBody, AppointmentParams, AppointmentsUpdateBody, AvailabilityResponse } from "@/types/appointments";
 import { proxyServer } from "./serverConfig";
 
-export const getAllAppointments = async () => {
-    const res = await proxyServer.get<AppointmentBody>(`/appointments`);
+export const getAllAppointments = async (params:AppointmentParams) => {
+    const res = await proxyServer.get<AppointmentBody>(`/appointments`, {params});
     return res.data;
  };
 export const createAppointment = async (body: AppointmentCreateBody) => { 

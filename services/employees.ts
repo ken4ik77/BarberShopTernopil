@@ -1,9 +1,9 @@
-import { EmployeeAssignServiceResponse, EmployeeBody, EmployeeCreateBody } from "@/types/employees";
+import { EmployeeAssignServiceResponse, EmployeeBody, EmployeeCreateBody, EmployeeParams } from "@/types/employees";
 import { proxyServer } from "./serverConfig";
 import { ServiceBody } from "@/types/services";
 
-export const getEmployees = async () => { 
-    const res = await proxyServer.get<EmployeeBody>(`/employees`);
+export const getEmployees = async (params: EmployeeParams) => { 
+    const res = await proxyServer.get<EmployeeBody>(`/employees`, {params});
     return res.data;
 };
 export const createNewEmployees = async (body: EmployeeCreateBody) => {
