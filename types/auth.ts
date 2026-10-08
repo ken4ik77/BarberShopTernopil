@@ -24,7 +24,7 @@ export interface LogOutResponse {
 };
  
 export interface RefreshResponse {
-    accessToken: string;
+    success: boolean;
 }
 export interface UserBody{
     _id: string,

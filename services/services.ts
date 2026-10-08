@@ -1,8 +1,8 @@
-import { CreateServiceBody, ServiceBody, ServiceParam, UpdateServiceBody } from "@/types/services";
+import { CreateServiceBody, ServiceBody, ServiceParam, ServiceResponse, UpdateServiceBody } from "@/types/services";
 import { proxyServer } from "./serverConfig";
 
 export const getService = async (params:ServiceParam) => {
-    const res = await proxyServer.get<ServiceBody>(`/services`, {params});
+    const res = await proxyServer.get<ServiceResponse>(`/services`, {params});
     return res.data;
  };
 export const createService = async (body: CreateServiceBody) => { 
