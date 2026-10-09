@@ -64,7 +64,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   };
   try {
       await registerUser(body);
-      router.push("/auth/login");
+      router.push("/login");
     } catch {
       setError("Щось пішло не так. Можливо, такий email вже зареєстрований.");
     } finally {
