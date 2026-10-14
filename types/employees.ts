@@ -93,7 +93,7 @@ export interface EmployeeServicesErrorResponse {
 };
 export interface EmployeeAssignServiceParams {
     employeeId: string;
-    serViceId: string;
+    serviceId: string;
 };
 export interface EmployeeAssignServiceResponse { 
     _id: string;

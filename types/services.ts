@@ -54,9 +54,7 @@ export interface ServiceByIdErrorResponse {
     message: string;
     data: string;
 };
-export interface UpdateServiceParam {
-    serviceId: string;
-};
+
 export interface UpdateServiceBody {
     name: string;
     description?: string;
