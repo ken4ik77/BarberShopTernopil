@@ -53,18 +53,18 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <link href="/" className={css.navigationLink}>
+              <Link href="/" className={css.navigationLink}>
                 Працівники
-              </link>
+              </Link>
             </li>
             {user?.role === "admin" && (
               <li>
-                <link
+                <Link
                   href="/admin"
                   className={`${css.navLink} ${css.adminLink}`}
                 >
                   Admin Panel
-                </link>
+                </Link>
               </li>
             )}
           </ul>
@@ -93,9 +93,9 @@ const Header = () => {
               <Link href="/login" className={css.loginLink}>
                 Увійти
               </Link>
-              <link href="/register" className={css.registerBtn}>
+              <Link href="/register" className={css.registerBtn}>
                 Реєстрація
-              </link>
+              </Link>
             </div>
           )}
         </div>

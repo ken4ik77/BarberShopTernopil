@@ -1,0 +1,195 @@
+.footer {
+  width: 100%;
+  background-color: #111111; /* Темний елегантний фон як у хедері */
+  border-top: 1px solid #222222; /* Лінія зверху */
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  padding: 60px 0 0 0;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.section {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* --- Логотип --- */
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.logo span {
+  color: #ffb74d; /* Акцентний золотий колір */
+}
+
+/* --- Тексти, Адреса та Графік --- */
+.addressBlock {
+  font-style: normal;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.address {
+  color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.schedule p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* --- Заголовки блоків футера --- */
+.title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Списки та Навігаційні посилання --- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 3px 0;
+  display: inline-block;
+  align-self: flex-start; /* Для коректної ширини підкреслення */
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+/* Ефект підкреслення при наведенні (як у хедері) */
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffb74d;
+  transition: width 0.2s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Стиль для адмінки у футері */
+.adminLink {
+  color: #e57373;
+  font-weight: 600;
+}
+
+.adminLink::after {
+  background-color: #e57373;
+}
+
+/* --- Соціальні мережі (Зсув вбік + Підкреслення) --- */
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.socialLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: #cccccc;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 3px 0;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.socialLink:hover {
+  color: #ffb74d;
+  transform: translateX(5px); /* Легкий інтерактивний зсув */
+}
+
+/* --- Нижня копірайт плашка --- */
+.bottom {
+  margin-top: 60px;
+  border-top: 1px solid #222222;
+  padding: 20px 0;
+  font-size: 13px;
+  text-align: center;
+  color: #aaaaaa;
+}
+
+.bottomContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Мобільна адаптивність --- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .section {
+    min-width: 100%;
+  }
+
+  /* Соцмережі на мобільних стають в рядок */
+  .socials {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .socialLink:hover {
+    transform: translateY(
+      -3px
+    ); /* На мобілці краще піднімати вгору, ніж совати вбік */
+  }
+}
