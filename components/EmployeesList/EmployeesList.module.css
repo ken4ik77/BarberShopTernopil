@@ -1,0 +1,30 @@
+.employeesList {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.employeesTitle {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  font-weight: 700;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 12px;
+}
+
+.employeesList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}

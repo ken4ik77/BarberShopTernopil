@@ -12,8 +12,8 @@ const ServiceList = () => {
   });
   const item = serviceList.data?.services || [];
   return (
-    <div className={css["serviceList"]}>
-      <h2>ServiceList</h2>
+    <div className={css.serviceList}>
+      <h2 className={css.serviceTitle}>Список послуг</h2>
       <ul>
         {item.map((el) => {
           return (

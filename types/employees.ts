@@ -3,7 +3,7 @@ import { ServiceBody } from "./services";
 export interface EmployeeBody {
     _id: string;
     firstName: string;
-    lastNam: string;
+    lastName: string;
     description: string;
     phone: string;
     email: string;
