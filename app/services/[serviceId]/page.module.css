@@ -1,0 +1,113 @@
+.page {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px; /* Строга геометрія */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+/* --- Назва послуги на сторінці --- */
+.serviceName {
+  margin: 0 0 20px 0;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #e8e8e8;
+  padding-bottom: 20px;
+}
+
+/* --- Опис послуги --- */
+.serviceDescription {
+  margin: 0 0 35px 0;
+  font-size: 1.1rem;
+  color: #555555;
+  line-height: 1.8;
+}
+
+/* --- Тривалість послуги --- */
+.serviceDurationMinutes {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  color: #666666;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.serviceDurationMinutes::before {
+  content: "⏳";
+}
+
+.serviceDurationMinutes::after {
+  content: " хв";
+}
+
+/* --- Ціна послуги --- */
+.servicePrice {
+  margin: 0 0 35px 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e6951f; /* Бронзово-золотий бренд-колір */
+  display: inline-block;
+}
+
+.servicePrice::after {
+  content: " ₴";
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* --- Статус послуги --- */
+.serviceIsActive {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 2px;
+  position: absolute;
+  top: 48px;
+  right: 40px;
+}
+
+/* Логіка кольору для відображення статусу (можна продублювати у JS динамічний клас, як раніше) */
+.serviceIsActive:contains("Активний") {
+  background-color: rgba(255, 183, 77, 0.15);
+  color: #b37419;
+  border: 1px solid rgba(255, 183, 77, 0.3);
+}
+
+.serviceIsActive:contains("Неактивний") {
+  background-color: #f5f5f5;
+  color: #888888;
+  border: 1px solid #e8e8e8;
+}
+
+/* Адаптивність під мобільні екрани */
+@media (max-width: 768px) {
+  .page {
+    margin: 20px;
+    padding: 24px;
+    position: static;
+  }
+
+  .serviceName {
+    font-size: 1.8rem;
+    padding-top: 40px; /* Місце для статусу, якщо він зверху */
+  }
+
+  .serviceIsActive {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+}

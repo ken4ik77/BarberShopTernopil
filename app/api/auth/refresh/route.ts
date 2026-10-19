@@ -35,7 +35,7 @@ export const POST = async () => {
                 cookieStorage.set("accessToken", cookie.accessToken, options)
             }
         }
-        return NextResponse.json(res.data);
+        return NextResponse.json({success: true});
     } catch (error) {
         const err = error as AxiosError<{ message: string }>;
         return NextResponse.json(

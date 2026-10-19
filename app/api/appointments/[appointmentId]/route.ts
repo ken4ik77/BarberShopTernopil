@@ -11,7 +11,7 @@ export const GET = async (req: NextRequest, {params}: AppointmetsSearchID) => {
             const res = await globalServer.get(`/appointments/${appointmentId}`, {
                 headers: {cookie:cookieStorage.toString()}
             })
-            return res.data;
+            return NextResponse.json(res.data);
 };
 export const PATCH = async (req: NextRequest, { params }: AppointmetsSearchID) => {
     const {appointmentId } = await params;

@@ -1,0 +1,39 @@
+.serviceList {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #fafafa; /* Світлий, чистий фон */
+  min-height: 100vh;
+}
+
+.serviceList h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a; /* Глибокий графітовий замість чорного */
+  margin-bottom: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+/* Золота лінія під заголовком */
+.serviceList h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #ffb74d; /* Той самий золотий акцент */
+}
+
+.serviceList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}

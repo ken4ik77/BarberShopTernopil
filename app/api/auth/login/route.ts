@@ -5,19 +5,19 @@ import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (req: NextRequest) => {
+
   try {
     const body = await req.json();
     const res = await globalServer.post("/auth/login", body);
     const cookieStorage = await cookies();
-
     const setCookie = res.headers["set-cookie"] as string[];
-
     for (const item of setCookie) {
       const cookie = parseCookie(item);
+      console.log(cookie)
       const options = {
         maxAge: Number(cookie["Max-Age"]),
         path: cookie.Path,
-        expires: cookie.expires ? new Date(cookie.expires) : undefined,
+        expires: cookie.expires ? new Date(cookie.Expires as string) : undefined,
       };
 
       if (cookie.accessToken) {
@@ -27,6 +27,7 @@ export const POST = async (req: NextRequest) => {
         cookieStorage.set("refreshToken", cookie.refreshToken, options);
       }
     }
+    console.log(6);
     return NextResponse.json(res.data);
   } catch (error) {
     const err = error as AxiosError<{ message: string }>;

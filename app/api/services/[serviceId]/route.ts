@@ -10,7 +10,7 @@ interface ServiceParamsId {
 export const GET = async (req: NextRequest, { params }: ServiceParamsId) => { 
     const { serviceId } = await params;
         const res = await globalServer.get(`/services/${serviceId}`)
-        return res.data;
+    return NextResponse.json(res.data);
 };
 export const PATCH = async (req: NextRequest, {params }: ServiceParamsId) => {
     const { serviceId } = await params;

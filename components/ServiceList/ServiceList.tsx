@@ -1,0 +1,30 @@
+"use client";
+
+import { useQuery } from "@tanstack/react-query";
+import css from "./ServiceList.module.css";
+import { getService } from "@/services/services";
+import ServiceItem from "./ServiceItem/ServiceItem";
+
+const ServiceList = () => {
+  const serviceList = useQuery({
+    queryKey: ["services"],
+    queryFn: () => getService({}),
+  });
+  const item = serviceList.data?.services || [];
+  return (
+    <div className={css["serviceList"]}>
+      <h2>ServiceList</h2>
+      <ul>
+        {item.map((el) => {
+          return (
+            <li key={el._id}>
+              <ServiceItem elem={el} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default ServiceList;

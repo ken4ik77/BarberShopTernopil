@@ -1,0 +1,116 @@
+.serviceContainer {
+  background-color: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px; /* Сувора геометрія преміум-барбершопу */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.serviceContainer:hover {
+  transform: translateY(-4px);
+  border-color: #ffb74d; /* Золотий акцент при наведенні, як у хедері */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Назва послуги --- */
+.serviceName {
+  margin: 0 0 16px 0;
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-right: 95px; /* Захист від наповзання назви на бейдж статусу */
+}
+
+/* --- Ціна послуги --- */
+.servicePrice {
+  margin: 0 0 24px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #e6951f; /* Насичена шляхетна бронза для кращої читабельності на білому */
+  display: inline-block;
+}
+
+.servicePrice::after {
+  content: " ₴";
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* --- Статус (Бейдж в кутку) --- */
+.serviceIsActive {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* Для підключення динамічних стилів статусу */
+.serviceIsActive:contains("Активний"),
+.active {
+  background-color: rgba(255, 183, 77, 0.15);
+  color: #b37419;
+}
+
+.serviceIsActive:contains("Неактивний"),
+.inactive {
+  background-color: #f5f5f5;
+  color: #888888;
+}
+
+/* --- Контейнер кнопки --- */
+.serviceInfo {
+  margin-top: auto; /* Завжди притискає кнопку до нижнього краю картки */
+}
+
+/* --- Кнопка-посилання --- */
+.serviceInfoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background-color: #111111; /* Темна база, що повторює стиль хедера */
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.serviceInfoButton:hover {
+  background-color: #ffb74d; /* Кнопка стає золотою при наведенні */
+  color: #111111;
+}
+
+/* --- Анімація стрілочки --- */
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.serviceInfoButton:hover .arrowIcon {
+  transform: translateX(4px); /* Ефект легкого зсуву вправо при наведенні */
+}

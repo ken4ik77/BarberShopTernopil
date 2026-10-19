@@ -9,15 +9,16 @@ export interface ServiceBody {
     updatedAt: string;
 };
 export interface ServiceParam {
-    page: number;
-    perPage: number;
-    sortField: string;
-    sortOrder: string;
-    search: string;
-    isActive: boolean;
-    serviceId: string;
-    minPrice: number;
-    maxPrice: number;
+    page?: number;
+    perPage?: number;
+    sortField?: string;
+    sortOrder?: string;
+    search?: string;
+    isActive?: boolean;
+    serviceId?: string;
+    minPrice?: number;
+    maxPrice?: number;
+
 };
 export interface ServiceResponse {
     page: number;

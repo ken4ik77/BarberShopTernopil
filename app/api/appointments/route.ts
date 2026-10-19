@@ -1,6 +1,6 @@
 import { globalServer } from "@/services/serverConfig";
 import { cookies } from "next/headers";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 
 export const GET = async (req: NextRequest) => {
@@ -10,7 +10,7 @@ export const GET = async (req: NextRequest) => {
             params,
             headers: {cookie:cookieStorage.toString()}
         })
-        return res.data;
+        return NextResponse.json(res.data);
  };
 export const POST = async (req: NextRequest) => { 
     const cookieStorage = await cookies();
@@ -18,5 +18,5 @@ export const POST = async (req: NextRequest) => {
     const res = await globalServer.post('/appointments', body, {
         headers: {cookie:cookieStorage.toString()}
     })
-    return res.data;
+    return NextResponse.json(res.data);
 };
