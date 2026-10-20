@@ -23,8 +23,9 @@ const EmployeesItem = ({ elem }: EmployeesItemProps) => {
       <div className={css.employeeImage}>
         {employeesImage ? (
           <img
+            width={500}
             src={employeesImage}
-            alt={`${elem.firstName} ${elem.lastName}`}
+            alt={`${employeeFirstName} ${employeeLastName}`}
             className={css.image}
           />
         ) : (
