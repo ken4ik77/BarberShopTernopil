@@ -1,150 +1,186 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+.mainContainer {
+  background-color: #fafafa;
+  color: #1e293b;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+.sectionTag {
+  color: #2563eb;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+}
 
+.sectionTitle {
+  font-size: 2.25rem;
+  color: #0f172a;
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+/* 1. ГОЛОВНИЙ ПРОМОБЛОК */
+.heroSection {
+  height: 80vh;
+  background-image: url("/backgroundBarbershop.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  padding: 20px;
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+.heroContent {
+  text-align: center;
+  max-width: 750px;
+  color: #ffffff;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+.heroTag {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #60a5fa;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 16px 0;
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 36px;
+}
+
+/* 5. КНОПКА ПЕРЕХОДУ ДО БРОНЮВАННЯ */
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+  transition: all 0.25s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.4);
+}
+
+/* 2. КОРОТКА ІНФОРМАЦІЯ ПРО БАРБЕРШОП */
+.aboutSection {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.aboutContent p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 850px;
+  margin: 0 auto 40px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.featureCard {
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  text-align: left;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.featureCard h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 8px;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.featureCard p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+/* 3. СІТКА ДЛЯ ПОСЛУГ */
+.servicesSection {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+/* 4. СІТКА ДЛЯ ПРАЦІВНИКІВ */
+.employeesSection {
+  max-width: 1200px;
+  margin: 100px auto 80px; /* Нижній відступ гарантує гарний простір перед глобальним футером */
+  padding: 0 20px;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.employeesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.noData {
+  text-align: center;
+  color: #94a3b8;
+  grid-column: 1 / -1;
+  font-style: italic;
+}
+
+/* АДАПТИВНІСТЬ */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
   }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .heroSubtitle {
+    font-size: 1rem;
   }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
+  .sectionTitle {
+    font-size: 1.75rem;
   }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
-}
-
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
 }

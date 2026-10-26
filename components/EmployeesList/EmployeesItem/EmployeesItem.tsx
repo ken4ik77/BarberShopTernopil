@@ -10,44 +10,47 @@ const EmployeesItem = ({ elem }: EmployeesItemProps) => {
   const employeeFirstName = elem.firstName;
   const employeeLastName = elem.lastName;
   const employeeIsActive = elem.isActive;
-  const employeesImage = elem.imageUrl?.[0];
+  const employeesImage = elem.imageUrl;
   const employeeId = elem._id;
 
   return (
-    <div className={css.employeesContainer}>
-      <h3 className={css.employeesName}>{employeeFirstName}</h3>
-      <h4 className={css.employeesName}>{employeeLastName}</h4>
-      <p className={css.employeeIsActive}>
-        {employeeIsActive ? "Активний" : "Неактивний"}
-      </p>
-      <div className={css.employeeImage}>
-        {employeesImage ? (
-          <img
-            width={500}
-            src={employeesImage}
-            alt={`${employeeFirstName} ${employeeLastName}`}
-            className={css.image}
-          />
-        ) : (
-          <span className={css.noImage}>Немає фото</span>
-        )}
-      </div>
-      <div className={css.employeeInfo}>
-        <Link
-          href={`/employees/${employeeId}`}
-          className={css.serviceInfoButton}
+    <div className={css.employeeItem}>
+      <div className={css.employeesContainer}>
+        <h3 className={css.employeesName}>{employeeFirstName}</h3>
+        <h4 className={css.employeesName}>{employeeLastName}</h4>
+        <p
+          className={`${css.employeeIsActive} ${employeeIsActive ? css.active : css.inactive}`}
         >
-          Більше інформації про працівника
-          <svg
-            className={css.arrowIcon}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+          {employeeIsActive ? "Активний" : "Неактивний"}
+        </p>
+        <div className={css.employeeImage}>
+          {employeesImage ? (
+            <img
+              src={employeesImage}
+              alt={`${employeeFirstName} ${employeeLastName}`}
+              className={css.image}
+            />
+          ) : (
+            <span className={css.noImage}>Немає фото</span>
+          )}
+        </div>
+        <div className={css.employeeInfo}>
+          <Link
+            href={`/employees/${employeeId}`}
+            className={css.serviceInfoButton}
           >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Link>
+            Більше інформації про працівника
+            <svg
+              className={css.arrowIcon}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </div>
   );

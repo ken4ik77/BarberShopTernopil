@@ -1,5 +1,5 @@
 .page {
-  min-height: 100vh;
+  height: auto;
   background-color: #f8fafc;
   display: flex;
   justify-content: center;
@@ -106,5 +106,57 @@
   }
   .page .employeeImage {
     height: 250px;
+  }
+}
+/* --- ДОДАЙТЕ ЦІ СТИЛІ ДО ВАШОГО ФАЙЛУ page.module.css --- */
+
+.employeeInfo {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center; /* Центрує кнопку всередині контейнера */
+}
+
+.serviceInfoButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #2563eb; /* Гарний синій колір кнопки */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%; /* Кнопка розтягується на всю ширину картки мобільного */
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.serviceInfoButton:hover {
+  background-color: #1d4ed8; /* Темніший відтінок при наведенні */
+}
+
+.serviceInfoButton:active {
+  transform: scale(0.98); /* Ефект натискання */
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+/* Ефект руху стрілки вправо при наведенні на кнопку */
+.serviceInfoButton:hover .arrowIcon {
+  transform: translateX(5px);
+}
+
+/* Медіа-запит для більших екранів (робимо кнопку компактнішою на десктопі) */
+@media (min-width: 480px) {
+  .serviceInfoButton {
+    width: auto; /* На великих екранах кнопка стає за розміром тексту */
   }
 }

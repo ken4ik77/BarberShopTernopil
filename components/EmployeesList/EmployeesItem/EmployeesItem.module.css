@@ -7,7 +7,10 @@
     transform 0.2s ease,
     box-shadow 0.2s ease;
   overflow: hidden;
-  height: 100%;
+  /* ВИПРАВЛЕНО: міняємо height з 100% на auto, щоб картка розширювалася вниз */
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .employeeItem:hover {
@@ -19,7 +22,8 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* ВИПРАВЛЕНО: flex-grow змушує внутрішній контейнер займати всю доступну висоту */
+  flex-grow: 1;
 }
 
 .employeesName {
@@ -36,21 +40,29 @@ h4.employeesName {
   font-size: 1.1rem;
   font-weight: 500;
   color: #64748b;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-/* Розумний селектор для статусу активності */
+/* Базовий стиль для плашки статусу */
 .employeeIsActive {
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 16px;
   display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: max-content;
 }
 
-/* Якщо текст "Активний" — зелений, якщо "Неактивний" — червоний */
-.employeeIsActive:contains("Активний"),
-:global(.employeeIsActive) {
+/* ВИПРАВЛЕНО: Роздільні кольори для статусів */
+.active {
   color: #10b981;
+  background-color: #f0fdf4; /* Світло-зелений фон */
+}
+
+.inactive {
+  color: #ef4444;
+  background-color: #fef2f2; /* Світло-червоний фон */
 }
 
 .employeeImage {
@@ -59,16 +71,19 @@ h4.employeesName {
   background-color: #f1f5f9;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 20px; /* Трохи збільшили відступ до кнопки */
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* Забороняємо картинці стискатися */
 }
 
 .image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .noImage {
@@ -77,31 +92,51 @@ h4.employeesName {
   font-style: italic;
 }
 
+/* Обгортка кнопки */
 .employeeInfo {
-  margin-top: auto; /* Притискає кнопку до низу картки */
+  margin-top: auto; /* Надійно штовхає кнопку до низу */
+  padding-top: 4px;
 }
 
+/* Кнопка з градієнтом */
 .serviceInfoButton {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  color: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff !important;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .serviceInfoButton:hover {
-  color: #1d4ed8;
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
 }
 
-.serviceInfoButton:hover .arrowIcon {
-  transform: translateX(4px);
+.serviceInfoButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
 }
 
 .arrowIcon {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s ease;
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.employeeItem:hover .arrowIcon,
+.serviceInfoButton:hover .arrowIcon {
+  transform: translateX(4px);
 }

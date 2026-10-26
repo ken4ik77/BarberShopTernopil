@@ -30,7 +30,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Головний контейнер займає весь екран */
+}
+main {
+  flex-grow: 1; /* Контентна частина розтягується і притискає футер вниз, якщо сторінка пуста */
+}
+footer {
+  flex-shrink: 0; /* Футер не стискається */
+}
 * {
   box-sizing: border-box;
   padding: 0;

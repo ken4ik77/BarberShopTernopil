@@ -17,7 +17,7 @@ const EmployeesList = () => {
         {item.map((el) => {
           return (
             <li key={el._id}>
-              <EmployeesItem elem={el} />
+              <EmployeesItem key={el._id} elem={el} />
             </li>
           );
         })}
