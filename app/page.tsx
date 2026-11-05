@@ -19,7 +19,7 @@ const HomePage = async () => {
       <section className={css.heroSection}>
         <div className={css.heroOverlay}>
           <div className={css.heroContent}>
-            <span className={css.heroTag}>Ласкаво просимо до BARBERSHOP</span>
+            <span className={css.heroTag}>Ласкаво просимо до BARBERSHOP.</span>
             <h1 className={css.heroTitle}>Більше ніж просто стрижка</h1>
             <p className={css.heroSubtitle}>
               Місце, де створюється бездоганний стиль, цінується якість та панує

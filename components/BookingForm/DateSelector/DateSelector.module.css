@@ -1,0 +1,53 @@
+/* Контейнер для інпуту дати */
+.dateSelector {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Стилізація самого інпуту типу date */
+.dateSelector input[type="date"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: inherit; /* Успадковує красивий шрифт із форми */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  background-color: #f8f9fa;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Ефект фокусу при натисканні або виборі */
+.dateSelector input[type="date"]:focus {
+  background-color: #ffffff;
+  border-color: #0070f3; /* Фірмовий синій колір форми */
+  box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.1);
+}
+
+/* Ефект при наведенні мишкою */
+.dateSelector input[type="date"]:hover:not(:focus) {
+  border-color: #cbd5e1;
+  background-color: #f1f5f9;
+}
+
+/* Стилізація вбудованої іконки календаря (для Chrome / Safari / Edge) */
+.dateSelector input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+/* Легкий ефект при наведенні на саму іконку календаря всередині інпуту */
+.dateSelector input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: #e2e8f0;
+}

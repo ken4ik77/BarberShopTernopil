@@ -1,0 +1,66 @@
+/* Контейнер картки підтвердження */
+.confirmationSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1.25rem;
+  background-color: #f8f9fa; /* Світло-сірий фон, як у інпутів */
+  border: 2px dashed #cbd5e1; /* Пунктирна лінія створює ефект чека/квитка */
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* Стилізація рядків із даними (послуга, дата, майстер, час) */
+.confirmSelector {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #334155;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Останній текстовий рядок перед кнопкою не потребує нижньої лінії */
+.confirmSelector:nth-last-of-type(1) {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Виділяємо перше значення (назву послуги) трохи жирнішим */
+.confirmSelector:first-of-type {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Кнопка "Підтвердити запис" */
+.confirmationSelector button {
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #10b981; /* Зелений колір (успіх/підтвердження) */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
+  width: 100%;
+}
+
+/* Ефекти для зеленої кнопки при наведенні та натисканні */
+.confirmationSelector button:hover {
+  background-color: #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.confirmationSelector button:active {
+  transform: scale(0.98);
+}

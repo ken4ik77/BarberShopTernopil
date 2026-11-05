@@ -1,0 +1,65 @@
+/* Контейнер для селектора */
+.serviceSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Стилізація текстового підпису (label) */
+.serviceSelector label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #666666;
+}
+
+/* Стилізація самого випадного списку <select> */
+.serviceSelector select {
+  width: 100%;
+  padding: 0.85rem 2.5rem 0.85rem 1rem; /* Більший відступ справа, щоб текст не налізав на стрілочку */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  background-color: #f8f9fa;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  /* Прибираємо стандартну стрілочку браузера */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Додаємо кастомну мінімалістичну стрілочку через SVG */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' fill='none' viewBox='0 0 24 24' stroke='%234a5568' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='none' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.1rem;
+}
+
+/* Стан фокусу (коли користувач клікнув на селект) */
+.serviceSelector select:focus {
+  background-color: #ffffff;
+  border-color: #0070f3; /* Колір в тон нашої головної кнопки */
+  box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.1);
+}
+
+/* Ефект при наведенні мишкою */
+.serviceSelector select:hover:not(:focus) {
+  border-color: #cbd5e1;
+  background-color: #f1f5f9;
+}
+
+/* Стилізація елементів списку всередині <select> (працює на рівні ОС/браузера) */
+.serviceSelector option {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}

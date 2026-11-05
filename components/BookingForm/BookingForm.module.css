@@ -1,0 +1,81 @@
+/* Контейнер усієї форми */
+.bookingForm {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Головний заголовок форми */
+.bookingFormMainName:is(h3) {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* Підписи/назви до наступних кроків (вибрати дату, працівника тощо) */
+.bookingFormMainName:is(p) {
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+/* Фінальна кнопка "Записатися" */
+.bookingForm button {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0070f3; /* Сучасний синій бренд-колір */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
+  width: 100%;
+}
+
+/* Ефекти для кнопки при наведенні та натисканні */
+.bookingForm button:hover {
+  background-color: #0051cb;
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
+}
+
+.bookingForm button:active {
+  transform: scale(0.98);
+}
+
+/* Анімація появи для кроків форми (плавний ефект для умовного рендерингу) */
+.bookingForm > * {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

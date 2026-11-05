@@ -1,6 +1,7 @@
 import { EmployeeBody } from "@/types/employees";
 import css from "./EmployeesItem.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 interface EmployeesItemProps {
   elem: EmployeeBody;
@@ -25,7 +26,9 @@ const EmployeesItem = ({ elem }: EmployeesItemProps) => {
         </p>
         <div className={css.employeeImage}>
           {employeesImage ? (
-            <img
+            <Image
+              width={500}
+              height={500}
               src={employeesImage}
               alt={`${employeeFirstName} ${employeeLastName}`}
               className={css.image}

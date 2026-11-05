@@ -1,4 +1,4 @@
-import { AppointmentBody, AppointmentCreateBody, AppointmentParams, AppointmentResponse, AppointmentsUpdateBody, AvailabilityResponse } from "@/types/appointments";
+import { AppointmentBody, AppointmentCreateBody, AppointmentParams, AppointmentResponse, AppointmentsUpdateBody, AvailabilityParams, AvailabilityResponse } from "@/types/appointments";
 import { proxyServer } from "./serverConfig";
 
 export const getAllAppointments = async (params:AppointmentParams) => {
@@ -25,7 +25,7 @@ export const deleteAppointment = async (appointmentId: string) => {
     const res = await proxyServer.delete<AppointmentBody>(`/appointments/${appointmentId}`);
     return res.data;
  };
-export const getAppointmentAvailability = async () => { 
-    const res = await proxyServer.get<AvailabilityResponse>(`/availability`);
+export const getAppointmentAvailability = async (params: AvailabilityParams) => { 
+    const res = await proxyServer.get<AvailabilityResponse>(`/availability`, {params});
     return res.data;
 };

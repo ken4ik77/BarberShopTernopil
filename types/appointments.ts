@@ -38,6 +38,7 @@ export interface AppointmentCreateBody {
     userId?: string;
     startAt: string;
     comment?: string;
+    
 }
 
 export interface MyAppointmentParams {

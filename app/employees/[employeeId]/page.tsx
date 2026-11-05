@@ -1,5 +1,6 @@
 import css from "./page.module.css";
 import { getEmployeesById } from "@/services/employees";
+import Image from "next/image";
 import Link from "next/link";
 
 interface EmployeeIdProps {
@@ -21,8 +22,9 @@ const Page = async ({ params }: EmployeeIdProps) => {
         </p>
         <div className={css.employeeImage}>
           {res.imageUrl ? (
-            <img
+            <Image
               width={500}
+              height={500}
               src={res.imageUrl}
               alt={`${res.firstName} ${res.lastName}`}
               className={css.image}
