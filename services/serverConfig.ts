@@ -1,8 +1,9 @@
+import { siteUrl } from "@/helpers/constans";
 import axios from "axios";
 
 
 export const proxyServer = axios.create({
-    baseURL: "https://barber-shop-ternopil-jet.vercel.app/api",
+    baseURL: `${siteUrl}/api`,
     withCredentials: true,
     
 });
