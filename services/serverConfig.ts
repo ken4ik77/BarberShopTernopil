@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const proxyServer = axios.create({
-    baseURL: "http://localhost:3000/api",
+    baseURL: "https://barber-shop-ternopil-jet.vercel.app/api",
     withCredentials: true,
     
 });
