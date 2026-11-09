@@ -11,13 +11,19 @@ const ServiceItem = ({ elem }: ServiceItemProps) => {
   const servicePrice = elem.price;
   const serviceIsActive = elem.isActive;
   const serviceId = elem._id;
+
   return (
     <div className={css.serviceContainer}>
       <h3 className={css.serviceName}>{serviceName}</h3>
       <p className={css.servicePrice}> {servicePrice}</p>
-      <p className={css.serviceIsActive}>
+
+      {/* Динамічно додаємо клас активного або неактивного стану */}
+      <p
+        className={`${css.statusBadge} ${serviceIsActive ? css.active : css.inactive}`}
+      >
         {serviceIsActive ? "Активний" : "Неактивний"}
       </p>
+
       <div className={css.serviceInfo}>
         <Link href={`/services/${serviceId}`} className={css.serviceInfoButton}>
           Більше інформації
