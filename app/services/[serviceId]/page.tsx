@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import css from "./page.module.css";
 import { getServiceById } from "@/services/services";
 interface ServiceIdProps {
@@ -13,7 +14,13 @@ const Page = async ({ params }: ServiceIdProps) => {
       <p className={css.serviceDescription}>{res.description}</p>
       <p className={css.serviceDurationMinutes}>{res.durationMinutes}</p>
       <p className={css.servicePrice}> {res.price}</p>
-      <p className={css.serviceIsActive}>
+      <p
+        className={clsx(
+          css.serviceIsActive,
+          res.isActive && css.active,
+          !res.isActive && css.notActive,
+        )}
+      >
         {res.isActive ? "Активний" : "Неактивний"}
       </p>
     </div>

@@ -4,13 +4,13 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 interface UserIdParam {
-    params: Promise<{userId:string}>
+    params: Promise<{id:string}>
 }
 
 export const GET = async (req: NextRequest, { params }: UserIdParam) => {
-    const { userId } = await params;
+    const { id } = await params;
     const cookieStorage = await cookies();
-    const res = await globalServer.get(`/users/${userId}`, {
+    const res = await globalServer.get(`/users/${id}`, {
         headers: {
             Cookie: cookieStorage.toString(),
         }
@@ -18,10 +18,10 @@ export const GET = async (req: NextRequest, { params }: UserIdParam) => {
     return NextResponse.json(res.data);
 };
 export const PATCH = async (req: NextRequest, { params }: UserIdParam) => {
-    const { userId } = await params;
+    const { id } = await params;
     const cookieStorage = await cookies();
     const body = await req.json();
-    const res = await globalServer.patch(`/users/${userId}`, body, {
+    const res = await globalServer.patch(`/users/${id}`, body, {
         headers: {
             Cookie: cookieStorage.toString()
         }
@@ -30,8 +30,8 @@ export const PATCH = async (req: NextRequest, { params }: UserIdParam) => {
  };
 export const DELETE = async (req: NextRequest, { params }: UserIdParam) => {
     const cookieStorage = await cookies();
-    const { userId } = await params;
-    const res = await globalServer.delete(`/users/${userId}`, {
+    const { id } = await params;
+    const res = await globalServer.delete(`/users/${id}`, {
         headers: {
             Cookie: cookieStorage.toString()
         }

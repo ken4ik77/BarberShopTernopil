@@ -9,7 +9,10 @@ const HomePage = async () => {
   const [employeesData, serviceData] = await Promise.all([
     getEmployees({ isActive: true, perPage: 4 }),
     getService({ isActive: true, perPage: 4 }),
-  ]);
+  ]).catch((err) => {
+    console.log(err);
+    return [];
+  });
   const activeEmployees = employeesData?.employees || [];
   const activeServices = serviceData?.services || [];
 

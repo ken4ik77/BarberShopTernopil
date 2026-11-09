@@ -80,13 +80,13 @@
 }
 
 /* Логіка кольору для відображення статусу (можна продублювати у JS динамічний клас, як раніше) */
-.serviceIsActive:contains("Активний") {
+.active {
   background-color: rgba(255, 183, 77, 0.15);
   color: #b37419;
   border: 1px solid rgba(255, 183, 77, 0.3);
 }
 
-.serviceIsActive:contains("Неактивний") {
+.notActive {
   background-color: #f5f5f5;
   color: #888888;
   border: 1px solid #e8e8e8;
