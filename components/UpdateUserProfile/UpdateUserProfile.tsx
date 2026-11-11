@@ -39,7 +39,7 @@ const UpdateUserProfile = () => {
   useEffect(() => {
     if (user) {
       reset({
-        firstName: user..firstName || "",
+        firstName: user.firstName || "",
         lastName: user.lastName || "",
         phone: user.phone || "",
       });
