@@ -1,8 +1,12 @@
+import { UserBody } from "./auth";
+import { EmployeeBody } from "./employees";
+import { ServiceBody } from "./services";
+
 export interface AppointmentBody {
     _id: string;
-    userId: string;
-    employeeId: string;
-    serviceId: string;
+    userId: UserBody;
+    employeeId: EmployeeBody;
+    serviceId: ServiceBody;
     startAt: string;
     endAt: string;
     price: number;

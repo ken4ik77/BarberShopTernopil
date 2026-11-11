@@ -10,9 +10,10 @@ export const createAppointment = async (body: AppointmentCreateBody) => {
     return res.data;
 };
 export const getMyAppointments = async () => { 
-    const res = await proxyServer.get<AppointmentBody>(`/appointments/my`);
+    const res = await proxyServer.get<AppointmentResponse>(`/appointments/my`);
     return res.data;
 };
+
 export const getAppointmentById = async (appointmentId: string) => { 
     const res = await proxyServer.get<AppointmentBody>(`/appointments/${appointmentId}`);
     return res.data;

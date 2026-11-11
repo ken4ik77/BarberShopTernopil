@@ -1,10 +1,10 @@
-import UserProfile from "@/components/UserProfile/UserProfile";
 import css from "./page.module.css";
+import MyProfile from "@/components/MyProfile/MyProfile";
 
 const Page = () => {
   return (
     <div className={css["page"]}>
-      <UserProfile />
+      <MyProfile />
     </div>
   );
 };

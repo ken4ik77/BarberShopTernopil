@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
-import css from "./UserProfile.module.css";
+import css from "./UpdateUserProfile.module.css";
 import { getMe } from "@/services/auth";
 import { useForm } from "react-hook-form";
 import { refreshMyProfile } from "@/services/users";
@@ -23,7 +23,7 @@ interface ProfileFormInputs {
   phone: string;
 }
 
-const UserProfile = () => {
+const UpdateUserProfile = () => {
   const queryClient = useQueryClient();
 
   const {
@@ -133,4 +133,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default UpdateUserProfile;

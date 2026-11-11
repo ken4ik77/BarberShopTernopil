@@ -1,0 +1,53 @@
+.appointmentItem {
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  transition: border-color 0.2s ease;
+}
+
+.appointmentItem:hover {
+  border-color: #eab308;
+}
+
+.mainH4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #eab308;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mainP {
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background-color: #262626;
+  border: 1px solid #404040;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+/* Якщо коментар порожній — приховуємо порожню плашку */
+.mainP:empty {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .appointmentItem {
+    padding: 1.25rem;
+  }
+}
