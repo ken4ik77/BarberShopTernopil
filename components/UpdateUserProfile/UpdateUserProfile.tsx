@@ -31,7 +31,7 @@ const UpdateUserProfile = () => {
     isLoading,
     isError,
   } = useQuery<UserProfileData>({
-    queryKey: ["me"],
+    queryKey: ["user"],
     queryFn: getMe,
   });
 
@@ -39,7 +39,7 @@ const UpdateUserProfile = () => {
   useEffect(() => {
     if (user) {
       reset({
-        firstName: user.firstName || "",
+        firstName: user..firstName || "",
         lastName: user.lastName || "",
         phone: user.phone || "",
       });

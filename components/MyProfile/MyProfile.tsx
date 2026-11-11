@@ -3,7 +3,6 @@ import css from "./MyProfile.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { getMe } from "@/services/auth";
 import Link from "next/link";
-import { log } from "node:console";
 
 const MyProfile = () => {
   const { data, isLoading, isError } = useQuery({
@@ -20,12 +19,12 @@ const MyProfile = () => {
     return <div className={css.myProfile}>Не вдалося завантажити дані.</div>;
   }
 
-  const firstName = data?.firstName || "Не вказано";
-  const lastName = data?.lastName || "Не вказано";
-  const userEmail = data?.email || "Не вказано";
-  const userPhone = data?.phone || "Не вказано";
-  const addUserAt = data?.createdAt
-    ? new Date(data.createdAt).toLocaleDateString("uk-UA")
+  const firstName = data?.user.firstName || "Не вказано";
+  const lastName = data?.user.lastName || "Не вказано";
+  const userEmail = data?.user.email || "Не вказано";
+  const userPhone = data?.user.phone || "Не вказано";
+  const addUserAt = data?.user.createdAt
+    ? new Date(data.user.createdAt).toLocaleDateString("uk-UA")
     : "Не вказано";
   return (
     <div className={css["myProfile"]}>

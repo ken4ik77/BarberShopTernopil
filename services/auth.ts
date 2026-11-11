@@ -2,7 +2,7 @@ import { LoginBody, LoginResponse, LogOutResponse, RefreshResponse, RegisterBody
 import { proxyServer } from "./serverConfig";
 
 export const getMe = async () => {
-    const res = await proxyServer.get<UserBody>('/auth/me');
+    const res = await proxyServer.get<{user:UserBody}>('/auth/me');
     return res.data;
  };
 
